@@ -1,0 +1,16 @@
+{
+  "name": "magentosearchquerybuilder",
+  "version": "1.0.0",
+  "description": "Tool to build search criteria query for Magento REST Web API",
+  "scripts": {
+    "update": "composer dump-autoload",
+    "test": "./vendor/bin/peridot tests/",
+    "lint": "./vendor/bin/phpcs --standard=PSR2 ./src",
+    "lint:fix": "./vendor/bin/phpcbf --standard=PSR2 ./src",
+    "preversion": "npm run lint && npm test",
+    "postversion": "git push && git push --tags"
+  },
+  "keywords": [ "Magento", "Search", "library", "REST", "PHP" ],
+  "author": "",
+  "license": "MIT"
+}
