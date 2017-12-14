@@ -21,7 +21,7 @@ composer require "dsheiko/magentosearchquerybuilder"
 ## Building query
 ```php
 <?php
-use App\Model\Api\Magento\SearchCriteria;
+use Dsheiko\SearchCriteria;
 $builder = new SearchCriteria();
 $builder
     ->filterGroup([
@@ -29,7 +29,6 @@ $builder
         [ "name", "%25Parachute%25", "like" ],
     ])
     ->filterGroup([
-        [ "sku", "WSH%2531%25", "like" ],
         [ "price", 30, "lt" ],
     ])
     ->sortOrder( "created_at", "DESC")
@@ -50,9 +49,6 @@ The result:
   . "&searchCriteria[filter_groups][0][filters][1][field]=name"
   . "&searchCriteria[filter_groups][0][filters][1][value]=%25Parachute%25"
   . "&searchCriteria[filter_groups][0][filters][1][condition_type]=like"
-  . "&searchCriteria[filter_groups][1][filters][0][field]=sku"
-  . "&searchCriteria[filter_groups][1][filters][0][value]=WSH%2531%25"
-  . "&searchCriteria[filter_groups][1][filters][0][condition_type]=like"
   . "&searchCriteria[filter_groups][1][filters][1][field]=price"
   . "&searchCriteria[filter_groups][1][filters][1][value]=30"
   . "&searchCriteria[filter_groups][1][filters][1][condition_type]=lt"
